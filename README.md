@@ -29,3 +29,8 @@ Actual time needed to complete: _____
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+* [.gitignore code](https://www.gitignore.io/api/node,linux,macos,windows,visualstudiocode)
+* [React](https://reactjs.org/)
+* [React Bootstrap](https://react-bootstrap.github.io/)
+* [eslintrc.json code](https://github.com/codefellows/seattle-code-201d77/blob/main/configs/eslintrc.json)
