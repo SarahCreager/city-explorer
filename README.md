@@ -7,7 +7,7 @@
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 This application searches for the largest city in the world based off the city name input. It displays the city name along with lat and lon coordinates and a location map.
 
-[WRRC Model](./src/assets/WRRC.png)
+[My WRRC Model](./src/assets/WRRC.png)
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
