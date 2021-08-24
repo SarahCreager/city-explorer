@@ -26,7 +26,6 @@ export default class App extends Component {
     try {
       const API_URL = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_CITY_KEY}&q=${this.state.exploreQuery}&format=json`;
       const response = await axios.get(API_URL);
-      console.log(response.data);
       this.setState({location:response.data[0]});
       this.setState({image:`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=15`});
     } catch {
@@ -42,15 +41,12 @@ export default class App extends Component {
             <Navbar.Brand href="#home" id="title">City Explorer</Navbar.Brand>
           </Navbar>
         </Container>
-
         <Container id="form">
           <FloatingLabel controlId="floatingInputGrid" label="search for a city">
             <Form.Control id="formInput" onChange={(e) => this.setState({ exploreQuery: e.target.value })} value={this.state.exploreQuery} type="city" placeholder="search for a city" />
           </FloatingLabel>
           <Button onClick={this.handleButtonClick} id="button" size="lg">Explore!</Button>
         </Container>
-
-        {' '}
         <Container id="map">
           {this.state.error ? <h2>not a valid location</h2>
             : this.state.location.place_id &&
@@ -67,8 +63,3 @@ export default class App extends Component {
   }
 }
 
-
-
-
-
-{/* <input onChange={(e) => this.setState({ exploreQuery: e.target.value })} value={this.state.exploreQuery} placeholder="search for a city"></input> */}
