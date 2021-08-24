@@ -17,11 +17,11 @@
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-Name of feature: ________________________________
+Name of feature: Display latitude and longitude of location input. 
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: __2 hours___
 
-Start time: _____
+Start time: __4:22pm___
 
 Finish time: _____
 
