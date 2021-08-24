@@ -23,9 +23,20 @@ Estimate of time needed to complete: __2 hours___
 
 Start time: __4:22pm___
 
+Finish time: ___6:00pm__
+
+Actual time needed to complete: _1 hour 20 min____
+
+Name of feature: Display map. 
+
+Estimate of time needed to complete: __1 hours___
+
+Start time: _____
+
 Finish time: _____
 
-Actual time needed to complete: _____
+Actual time needed to complete: _1 hour 20 min____
+
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
