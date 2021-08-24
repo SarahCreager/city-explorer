@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+
+#root {
+  background: #3F332B;
+  margin-left: 0%;
+  margin-right: 0%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#navBar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+#title {
+  font-size: 320%;
+  color: #CBA58B;
+  margin-bottom: 8%;
+  margin-top: 4%;
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: .03em;
+}
+
+
+#form {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 500px;
+  width:100%;
+  background-repeat: no-repeat;
+  background-image: url("../src//assets/map.jpg");
+  background-position: top;
+  background-attachment: fixed;
+  background-size: 100%;
+  
 }
 
-.App-link {
-  color: #61dafb;
+#formInput {
+  width:100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#button {
+  background: #332D25;
+  margin-left: 1%;
+  padding: 1.5% 3%;
+  font-size: 160%;
+  border: #CBA58B;
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: .05em;
 }
+
+#map{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4%;
+}
+
+#map h2, #map h3 {
+  color:#E1E0E0;
+}
+
+Image {
+  margin-top: 8%;
+}
+
+footer{
+  height: 200px;
+  text-align:center;
+  
+}
+
