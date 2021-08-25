@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Image from 'react-bootstrap/Image';
 import Navbar from 'react-bootstrap/Navbar';
+import Weather from './components/Weather';
 
 
 
@@ -19,6 +20,8 @@ export default class App extends Component {
       location:{},
       image:'',
       error:'',
+      weather:[],
+      weatherError:'',
     };
   }
 
@@ -28,10 +31,23 @@ export default class App extends Component {
       const response = await axios.get(API_URL);
       this.setState({location:response.data[0]});
       this.setState({image:`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=15`});
+
+      this.getWeather(this.state.exploreQuery);
     } catch {
       this.setState({error: true});
     }
   }
+
+  getWeather = async (exploreQuery) => {
+    const server_PORT = 'http://localhost:3001';
+    const server = `${server_PORT}/weather?searchQuery=${exploreQuery}&lat=${this.state.location.lat}&lon=${this.state.location.lon}`;
+    try {
+      const response = await axios.get(server);
+      this.setState({weather:response.data});
+    } catch (error) {
+      this.setState({weatherError: true});
+    }
+  };
 
   render() {
     return (
@@ -43,7 +59,7 @@ export default class App extends Component {
         </Container>
         <Container id="form">
           <FloatingLabel controlId="floatingInputGrid" label="search for a city">
-            <Form.Control id="formInput" onChange={(e) => this.setState({ exploreQuery: e.target.value })} value={this.state.exploreQuery} type="city" placeholder="search for a city" />
+            <Form.Control onChange={(e) => this.setState({ exploreQuery: e.target.value })} value={this.state.exploreQuery} type="city" placeholder="search for a city" />
           </FloatingLabel>
           <Button onClick={this.handleButtonClick} id="button" size="lg">Explore!</Button>
         </Container>
@@ -57,6 +73,7 @@ export default class App extends Component {
             <Image src={this.state.image} alt="map" thumbnail></Image>
           </>}
         </Container>
+        <Weather weather={this.state.weather}/>
         <footer>By Sarah Creager</footer>
       </>
     );
