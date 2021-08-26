@@ -7,7 +7,7 @@ export default class Weather extends Component {
     return (
       this.props.weather.map(location => {
         return (
-          <Container id="weatherContainer">
+          <Container id="weatherList">
             <ListGroup>
               <ListGroup.Item>{location.description}</ListGroup.Item>
               <ListGroup.Item>{location.date}</ListGroup.Item>

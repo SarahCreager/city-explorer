@@ -1,23 +1,23 @@
 # Project Name: City Explorer
 
 **Author**: Sarah Creager
-**Version**: 1.0.1 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.2 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
-This application searches for the largest city in the world based off the city name input. It displays the city name along with lat and lon coordinates, a location map, and a forecast.
+This application searches for the largest city in the world based off the city name input. It displays the city name along with lat and lon coordinates, a location map, a forecast, and movies related to the city.
 
-[My WRRC Model](./src/assets/WRRCMap.png)
+[My WRRC Model](./src/assets/WRRCTemplate.png)
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
-Getting started you will need to install React, React Bootstrap, Axios, and you will need to create an account through LocationIQ. 
+Getting started you will need to install React, React Bootstrap, Axios, and you will need to create an account through LocationIQ, WeatherBit, Movie DB.
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
-This application was designed using React components, React Bootstrap, JavaScript, CSS, HTML, Axios, and LocationIQ.
+This application was designed using React components, React Bootstrap, JavaScript, CSS, HTML, Axios, LocationIQ, WeatherBit, Movie DB.
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
@@ -79,6 +79,35 @@ Finish time: __10:00pm___
 
 Actual time needed to complete: _1 hour___
 
+Name of feature: Connect to backend to retrieve data from WeatherBit API.
+
+Estimate of time needed to complete: __1 hours___
+
+Start time: __6:00pm___
+
+Finish time: __7:00pm___
+
+Actual time needed to complete: __1 hours___
+
+Name of feature: Connect to server to retrieve movies related to city search.
+
+Estimate of time needed to complete: __1 hours___
+
+Start time: __8:00pm___
+
+Finish time: __8:30pm___
+
+Actual time needed to complete: __30 min___
+
+Name of feature: Deploy server.
+
+Estimate of time needed to complete: __1 hours___
+
+Start time: __8:00pm___
+
+Finish time: __8:30pm___
+
+Actual time needed to complete: __30 min___
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->

@@ -67,8 +67,28 @@ Image {
   margin-top: 8%;
 }
 
+#movieContainer{
+  margin-top: 8%;
+}
+
+#movieCard{
+  margin-top: 4%;
+}
+
+#weatherContainer{
+  margin-top: 6%;
+  width: 60%;
+}
+
+#weatherList{
+  margin-top: 4%;
+}
+
 footer{
+  display:flex;
+  justify-content: center;
+  align-items: center;
   height: 200px;
-  text-align:center;
+  color:#CBA58B;
 }
 
