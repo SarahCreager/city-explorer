@@ -9,8 +9,9 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Image from 'react-bootstrap/Image';
 import Navbar from 'react-bootstrap/Navbar';
 import Weather from './components/Weather';
+import Movie from './components/Movie';
 
-
+const server_PORT = process.env.REACT_APP_BACKEND_URL;
 
 export default class App extends Component {
   constructor(props) {
@@ -22,6 +23,8 @@ export default class App extends Component {
       error:'',
       weather:[],
       weatherError:'',
+      movie:[],
+      movieError:'',
     };
   }
 
@@ -33,19 +36,29 @@ export default class App extends Component {
       this.setState({image:`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=15`});
 
       this.getWeather(this.state.exploreQuery);
+      this.getMovie(this.state.exploreQuery);
     } catch {
       this.setState({error: true});
     }
   }
 
   getWeather = async (exploreQuery) => {
-    const server_PORT = 'http://localhost:3001';
     const server = `${server_PORT}/weather?searchQuery=${exploreQuery}&lat=${this.state.location.lat}&lon=${this.state.location.lon}`;
     try {
       const response = await axios.get(server);
       this.setState({weather:response.data});
     } catch (error) {
       this.setState({weatherError: true});
+    }
+  };
+
+  getMovie = async (exploreQuery) => {
+    const server = `${server_PORT}/movie?searchQuery=${exploreQuery}`;
+    try {
+      const response = await axios.get(server);
+      this.setState({movie:response.data});
+    } catch (error) {
+      this.setState({movieError: true});
     }
   };
 
@@ -73,7 +86,12 @@ export default class App extends Component {
             <Image src={this.state.image} alt="map" thumbnail></Image>
           </>}
         </Container>
-        <Weather weather={this.state.weather}/>
+        <Container id="weatherContainer">
+          <Weather weather={this.state.weather}/>
+        </Container>
+        <Container id="movieContainer">
+          <Movie movie={this.state.movie}/>
+        </Container>
         <footer>By Sarah Creager</footer>
       </>
     );
