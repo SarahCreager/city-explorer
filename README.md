@@ -1,7 +1,7 @@
 # Project Name: City Explorer
 
 **Author**: Sarah Creager
-**Version**: 1.0.2 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.3 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -108,6 +108,17 @@ Start time: __8:00pm___
 Finish time: __8:30pm___
 
 Actual time needed to complete: __30 min___
+
+Name of feature: Refactor Code.
+
+Estimate of time needed to complete: __1 hours___
+
+Start time: __5:00pm___
+
+Finish time: _7:00pm___
+
+Actual time needed to complete: __2 hours___
+
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
