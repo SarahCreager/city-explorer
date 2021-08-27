@@ -1,17 +1,18 @@
+//imports
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Component } from 'react';
 import axios from 'axios';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Image from 'react-bootstrap/Image';
-import Navbar from 'react-bootstrap/Navbar';
+import Header from './components/Header';
+import SearchForm from './components/SearchForm';
+import Map from './components/Map';
 import Weather from './components/Weather';
-import Movie from './components/Movie';
+import Movies from './components/Movies';
+import Footer from './components/Footer';
 
+//global variables
 const server_PORT = process.env.REACT_APP_BACKEND_URL;
+
 
 export default class App extends Component {
   constructor(props) {
@@ -28,7 +29,9 @@ export default class App extends Component {
     };
   }
 
-  handleButtonClick = async () => {
+  //helper functions
+  handleButtonClick = async (e) => {
+    e.preventDefault();
     try {
       const API_URL = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_CITY_KEY}&q=${this.state.exploreQuery}&format=json`;
       const response = await axios.get(API_URL);
@@ -65,34 +68,23 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <Container id="navBar">
-          <Navbar>
-            <Navbar.Brand href="#home" id="title">City Explorer</Navbar.Brand>
-          </Navbar>
-        </Container>
-        <Container id="form">
-          <FloatingLabel controlId="floatingInputGrid" label="search for a city">
-            <Form.Control onChange={(e) => this.setState({ exploreQuery: e.target.value })} value={this.state.exploreQuery} type="city" placeholder="search for a city" />
-          </FloatingLabel>
-          <Button onClick={this.handleButtonClick} id="button" size="lg">Explore!</Button>
-        </Container>
-        <Container id="map">
-          {this.state.error ? <h2>not a valid location</h2>
-            : this.state.location.place_id &&
-          <>
-            <h2>City Name: {this.state.location.display_name}</h2>
-            <h3>Latitude: {this.state.location.lat}.</h3>
-            <h3>Longitude: {this.state.location.lon}. </h3>
-            <Image src={this.state.image} alt="map" thumbnail></Image>
-          </>}
-        </Container>
-        <Container id="weatherContainer">
-          <Weather weather={this.state.weather}/>
-        </Container>
-        <Container id="movieContainer">
-          <Movie movie={this.state.movie}/>
-        </Container>
-        <footer>By Sarah Creager</footer>
+        <Header/>
+        <SearchForm
+          exploreQuery={this.state.exploreQuery}
+          handleButtonClick={this.handleButtonClick}
+          handleFormInput={(e) => this.setState({exploreQuery: e.target.value })}/>
+        <Map
+          place_id={this.state.location.place_id}
+          display_name={this.state.location.display_name}
+          lat={this.state.location.lat}
+          lon={this.state.location.lon}
+          image={this.state.image}
+          error={this.state.error}/>
+        <Weather weather={this.state.weather}/>
+        <Movies
+          movie={this.state.movie}
+          error={this.state.movieError}/>
+        <Footer/>
       </>
     );
   }
